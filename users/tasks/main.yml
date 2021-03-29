@@ -1,0 +1,15 @@
+---
+- name: Create user on remote host
+  become: yes
+  become_user: root
+  user:
+    name: '{{user_name}}'
+    state: '{{user_state}}'
+    shell: /bin/bash
+    append: yes
+
+    #- name: Public locell ssh public key for remote login
+    #authorized_key:
+    # user: '{{user_name}}'
+    # state: '{{user_state}}'
+    # key: "{{ lookup('file', '{{ssh_key}}') }}"

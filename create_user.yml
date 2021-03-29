@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+     - include_role:
+          name: users
+       vars:
+          user_name: default
+          ssh_key: ~/.ssh/id_ed25519.pub
